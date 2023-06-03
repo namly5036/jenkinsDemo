@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                //git 'https://github.com/namly5036/jenkinsDemo.git'
+                git 'https://github.com/namly5036/jenkinsDemo.git'
 
                 sh "docker image build -t jenkinsdemo:1.0 ."
             }
