@@ -1,18 +1,8 @@
 node {
-  stage("Clone the project") {
-    git branch: 'main', url: 'https://github.com/namly5036/jenkinsDemo.git'
+  stage("Build Image") {
+    sh "docker image build -t jenkinsDemo:1.0 ."
   }
-
-  stage("Compilation") {
-    sh "./mvnw clean install -DskipTests"
-  }
-
-  stage("Tests and Deployment") {
-    stage("Runing unit tests") {
-      sh "./mvnw test -Punit"
-    }
-    stage("Deployment") {
-      sh 'nohup ./mvnw spring-boot:run -Dserver.port=8081 &'
-    }
+  stage("Deployment") {
+    sh "docker run -d -p 8081:8081 --name jenkinsDemo jenkinsDemo:1.0"
   }
 }
