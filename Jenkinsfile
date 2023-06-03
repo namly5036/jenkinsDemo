@@ -14,12 +14,11 @@ pipeline {
 
                 sh "docker image build -t jenkinsDemo:1.0 ."
             }
-        },
-          stage('Run') {
+        }
+        stage('Run') {
             steps {
                 sh "docker run -d -p 8081:8081 --name jenkinsDemo jenkinsDemo:1.0"
             }
         }
     }
 }
-
