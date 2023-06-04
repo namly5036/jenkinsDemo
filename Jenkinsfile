@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
                 //git 'https://github.com/namly5036/jenkinsDemo.git'
 
-                sh "chmod -R 777 /var/jenkins_home/workspace/demo@tmp/durable-164c337f/script.sh"
+                sh "usermod -a -G docker jenkins"
                 sh "docker image build -t jenkinsdemo:1.0 ."
             }
         }
