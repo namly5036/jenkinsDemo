@@ -9,11 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                //git 'https://github.com/namly5036/jenkinsDemo.git'
-
-                sh "groupadd docker"
-                sh "usermod -a -G docker jenkins"
                 sh "docker image build -t jenkinsdemo:1.0 ."
             }
         }
