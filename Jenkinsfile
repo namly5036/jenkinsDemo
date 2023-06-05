@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "docker image build -t namly5036/jenkinsdemo:1.0 ."
-                sh "docker image build -t jenkinsdemo:1.0 ."
+                sh "docker push namly5036/jenkinsdemo:1.0"
             }
         }
         stage('Run') {
