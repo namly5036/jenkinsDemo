@@ -10,4 +10,14 @@ class DemoDeployApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void test1() throws InterruptedException {
+		Thread.sleep(1000);
+	}
+
+	@Test
+	void test2() throws InterruptedException {
+		Thread.sleep(1000);
+	}
+
 }

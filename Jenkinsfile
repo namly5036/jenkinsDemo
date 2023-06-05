@@ -1,14 +1,10 @@
 pipeline {
     agent any
 
-    //tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        //maven "M3"
-    //}
-
     stages {
         stage('Build') {
             steps {
+                sh "docker image build -t namly5036/jenkinsdemo:1.0 ."
                 sh "docker image build -t jenkinsdemo:1.0 ."
             }
         }
