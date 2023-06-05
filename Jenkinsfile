@@ -11,7 +11,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh "docker rm -f jenkinsdemo"
-                sh "docker run -d -p 8081:8081 --name jenkinsdemo jenkinsdemo:1.0"
+                sh "docker run -d -p 8081:8081 --name jenkinsdemo namly5036/jenkinsdemo:1.0"
             }
         }
     }
